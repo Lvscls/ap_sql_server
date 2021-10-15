@@ -28,69 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.btConnect = new System.Windows.Forms.Button();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.lvListeClient = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // btConnect
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btConnect.Location = new System.Drawing.Point(503, 44);
+            this.btConnect.Name = "btConnect";
+            this.btConnect.Size = new System.Drawing.Size(156, 73);
+            this.btConnect.TabIndex = 1;
+            this.btConnect.Text = "Rechercher";
+            this.btConnect.UseVisualStyleBackColor = true;
+            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
             // 
-            // clientToolStripMenuItem
+            // tbID
             // 
-            this.clientToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listeToolStripMenuItem,
-            this.ajoutToolStripMenuItem});
-            this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            this.clientToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.clientToolStripMenuItem.Text = "Client";
+            this.tbID.Location = new System.Drawing.Point(41, 57);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(164, 22);
+            this.tbID.TabIndex = 2;
             // 
-            // listeToolStripMenuItem
+            // lvListeClient
             // 
-            this.listeToolStripMenuItem.Name = "listeToolStripMenuItem";
-            this.listeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.listeToolStripMenuItem.Text = "Liste";
-            this.listeToolStripMenuItem.Click += new System.EventHandler(this.listeToolStripMenuItem_Click);
+            this.lvListeClient.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lvListeClient.HideSelection = false;
+            this.lvListeClient.Location = new System.Drawing.Point(41, 160);
+            this.lvListeClient.Name = "lvListeClient";
+            this.lvListeClient.Size = new System.Drawing.Size(618, 223);
+            this.lvListeClient.TabIndex = 3;
+            this.lvListeClient.UseCompatibleStateImageBehavior = false;
+            this.lvListeClient.View = System.Windows.Forms.View.Details;
             // 
-            // ajoutToolStripMenuItem
+            // columnHeader1
             // 
-            this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
-            this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.ajoutToolStripMenuItem.Text = "Ajout";
+            this.columnHeader1.Text = "nom";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "prenom";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "adresse";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "cp";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ville";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.lvListeClient);
+            this.Controls.Add(this.tbID);
+            this.Controls.Add(this.btConnect);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajoutToolStripMenuItem;
+        private System.Windows.Forms.Button btConnect;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.ListView lvListeClient;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 

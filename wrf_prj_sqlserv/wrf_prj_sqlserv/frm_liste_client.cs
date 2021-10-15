@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace wrf_prj_sqlserv
 {
@@ -16,5 +17,12 @@ namespace wrf_prj_sqlserv
         {
             InitializeComponent();
         }
+
+        private void frm_liste_client_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
