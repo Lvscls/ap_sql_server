@@ -13,6 +13,7 @@ namespace wrf_prj_sqlserv
 {
     public partial class Form1 : Form
     {
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=BTS2020-29\SQLEXPRESS;Initial Catalog=SEG_V1;Integrated Security=True");
         public Form1()
         {
             InitializeComponent();
@@ -58,6 +59,44 @@ namespace wrf_prj_sqlserv
                 MessageBox.Show("No data found.");
             }
             conn1.Close();
+
+        }
+
+        private void btAjout_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                if (sqlCon.State == ConnectionState.Closed)
+                    sqlCon.Open();
+                if (btAjout.Text == "Ajouter")
+                {
+                    SqlCommand sqlCmd = new SqlCommand("ClientAddOrEdit", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@mode", "Add");
+                    sqlCmd.Parameters.AddWithValue("@id", tbIdAdd.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@nom", tbNom.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@prenom", tbPrenom.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@adresse", tbAdresse.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@cp", tbCP.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@ville", tbVille.Text.Trim());
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Saved successfully");
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
 
         }
     }
