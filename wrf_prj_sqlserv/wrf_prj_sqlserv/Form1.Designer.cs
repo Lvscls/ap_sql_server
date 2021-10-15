@@ -36,6 +36,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btConnect
@@ -50,7 +51,7 @@
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(41, 57);
+            this.tbID.Location = new System.Drawing.Point(123, 58);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(164, 22);
             this.tbID.TabIndex = 2;
@@ -91,11 +92,21 @@
             // 
             this.columnHeader5.Text = "ville";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "entrer l\'id :";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lvListeClient);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.btConnect);
@@ -116,6 +127,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label1;
     }
 }
 
