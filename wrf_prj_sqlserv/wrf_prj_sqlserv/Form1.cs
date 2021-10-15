@@ -39,17 +39,26 @@ namespace wrf_prj_sqlserv
             reader1 = cmd1.ExecuteReader();
             if (reader1.Read())
             {
-                textBox1.Text = reader1["nom"].ToString();
-                textBox2.Text = reader1["prenom"].ToString();
-                textBox3.Text = reader1["adresse"].ToString();
-                textBox4.Text = reader1["cp"].ToString();
-                textBox5.Text = reader1["ville"].ToString();
+                lvListeClient.Items.Clear();
+
+
+
+                ListViewItem colonne = new ListViewItem();
+                colonne.Text = reader1["nom"].ToString(); //1ère colonne
+                colonne.SubItems.Add(reader1["prenom"].ToString()); //2ème
+                colonne.SubItems.Add(reader1["adresse"].ToString()); //3ème
+                colonne.SubItems.Add(reader1["cp"].ToString());
+                colonne.SubItems.Add(reader1["ville"].ToString());
+
+                //ajout de la ligne dans la liste
+                lvListeClient.Items.Add(colonne);
             }
             else
             {
                 MessageBox.Show("No data found.");
             }
             conn1.Close();
+
         }
     }
 }
